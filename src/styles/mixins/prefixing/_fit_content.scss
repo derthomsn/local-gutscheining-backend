@@ -1,0 +1,11 @@
+@mixin height-fit-content() {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+@mixin width-fit-content() {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}

@@ -1,0 +1,41 @@
+@mixin transition($property, $duration, $easing: linear) {
+  transition: $property $duration $easing;
+  -webkit-transition: $property $duration $easing;
+  -moz-transition: $property $duration $easing;
+}
+@mixin transitions($transitions...) {
+    transition: $transitions;
+    -webkit-transition: $transitions;
+    -moz-transition: $transitions;
+}
+
+@mixin transition-with-opacity($property, $duration, $easing: linear) {
+    transition: $property $duration $easing, opacity $duration $easing;
+    -webkit-transition: $property $duration $easing, opacity $duration $easing;
+    -moz-transition: $property $duration $easing, opacity $duration $easing;
+}
+
+@mixin transition-with-transform($property, $duration, $easing: linear) {
+    transition: $property $duration $easing, transform $duration $easing;
+    -webkit-transition: $property $duration $easing, transform $duration $easing;
+    -moz-transition: $property $duration $easing, transform $duration $easing;
+}
+
+@mixin transition-with-transform-and-opacity($property, $duration, $easing: linear) {
+    transition: $property $duration $easing, transform $duration $easing, opacity $duration $easing;
+    -webkit-transition: $property $duration $easing, transform $duration $easing, opacity $duration $easing;
+    -moz-transition: $property $duration $easing, transform $duration $easing, opacity $duration $easing;
+}
+
+@mixin transition-with-background-color($property, $duration, $easing: linear) {
+    transition: $property $duration $easing, background-color $duration $easing;
+    -webkit-transition: $property $duration $easing, background-color $duration $easing;
+    -moz-transition: $property $duration $easing, background-color $duration $easing;
+}
+
+@mixin transition-delay($delay) {
+    -webkit-transition-delay: $delay;
+    -moz-transition-delay: $delay;
+    -o-transition-delay: $delay;
+    transition-delay: $delay;
+}

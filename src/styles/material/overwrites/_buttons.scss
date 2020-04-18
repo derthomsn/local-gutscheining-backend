@@ -1,0 +1,22 @@
+.md-button {
+  @include border-radius($spacing-s);
+
+  &.md-theme-default {
+    font-weight: 900;
+    &.md-raised {
+      min-height: 32px;
+      height: auto;
+      min-width: 200px;
+
+      &.md-accent, &.md-primary {
+        &:not([disabled]) {
+          color: $color-font-light;
+        }
+      }
+
+      .md-ripple {
+        padding: $spacing-m $spacing-l;
+      }
+    }
+  }
+}

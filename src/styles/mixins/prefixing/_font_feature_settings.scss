@@ -1,0 +1,35 @@
+@mixin font-feature-settings($feature-tag-value...) {
+
+  $font-feature-defaults: "kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0;
+  $out: $font-feature-defaults;
+
+  @if length($feature-tag-value) > 0 {
+    @each $pair in $feature-tag-value {
+      $tag: nth($pair, 1);
+      $nth: index($font-feature-defaults, $tag 0) or index($font-feature-defaults, $tag 1);
+      @if type-of($nth) == number {
+        $step: ();
+        @if $nth > 1 {
+          @for $i from 1 through $nth - 1 {
+            $step: append($step, nth($out, $i), comma);
+          }
+        }
+        $step: append($step, $pair, comma);
+        @if $nth < length($out) {
+          @for $i from $nth + 1 through length($out) {
+            $step: append($step, nth($out, $i), comma);
+          }
+        }
+        $out: $step;
+      }
+      @else {
+        $out: append($out, $pair);
+      }
+    }
+  }
+
+  -webkit-font-feature-settings: $out;
+  -moz-font-feature-settings: $out;
+  font-feature-settings: $out;
+
+}

@@ -1,0 +1,11 @@
+.git
+.dockerignore
+Dockerfile
+**/*.class
+**/*.swp
+
+.idea
+**/*.iml
+**/*.iws
+**/*.ipr
+node_modules
